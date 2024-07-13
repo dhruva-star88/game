@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4 text-green-700">Crop Details</h1>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200">
+                <thead>
+                    <tr class="bg-green-200 text-green-700 uppercase text-sm leading-normal">
+                        <th class="py-3 px-6 text-left">Crop</th>
+                        <th class="py-3 px-6 text-left">Planting Date</th>
+                        <th class="py-3 px-6 text-left">Harvesting Date</th>
+                        <th class="py-3 px-6 text-left">Task Assigned</th>
+                    </tr>
+                </thead>
+                <tbody class="text-green-700 text-sm font-light">
+                    {% for crop in crops %}
+                        <tr class="border-b border-gray-200 hover:bg-green-100">
+                            <td class="py-3 px-6 text-left whitespace-nowrap">{{ crop.crop }}</td>
+                            <td class="py-3 px-6 text-left">{{ crop.planting_date }}</td>
+                            <td class="py-3 px-6 text-left">{{ crop.harvesting_date }}</td>
+                            <td class="py-3 px-6 text-left">{{ crop.task_assigned.task }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+ 
